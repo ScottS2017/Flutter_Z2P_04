@@ -58,12 +58,19 @@ class _BasicTweenWithStatusListenerState extends State<BasicTweenWithStatusListe
   /// be resized to fit each frame the Container is rendered.
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 10.0),
-        height: animation.value,
-        width: animation.value,
-        child: const FlutterLogo(),
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Tween with StatusListener'),
+        ),
+        body: Center(
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 10.0),
+            height: animation.value,
+            width: animation.value,
+            child: const FlutterLogo(),
+          ),
+        ),
       ),
     );
   }

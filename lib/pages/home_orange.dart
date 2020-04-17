@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/animation_examples/basics/basic_animations_home.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/gesture_detector_example.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/hera_self_contained_example.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example2.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/provider_example.dart';
-import 'package:o4_navigation_and_animation/widgets/exercises/buttons_exercises.dart';
-import 'package:o4_navigation_and_animation/widgets/exercises/provider_exercise.dart';
-import 'package:o4_navigation_and_animation/widgets/solutions/buttons_solution.dart';
-import 'package:o4_navigation_and_animation/widgets/solutions/provider_solution.dart';
+
 
 class HomeOrange extends StatefulWidget {
   const HomeOrange({Key key}) : super(key: key);
@@ -39,6 +33,7 @@ class _HomeOrangeState extends State<HomeOrange> {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      scrollDirection: Axis.horizontal,
       children: pages,
     );
   }

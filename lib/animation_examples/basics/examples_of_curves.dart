@@ -102,76 +102,83 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
         timeDilation = 1.0;
         ///*************************************************************************
 
-        return GestureDetector(
-            onTap: () {
-                _startAnimation();
-            },
-            child: Center(
-                child: Column(
-                    children: <Widget>[
-                        Center(
-                            child: Text(curveType,
-                                style: TextStyle(
-                                    fontSize: 32.0,
-                                    fontWeight: FontWeight.bold,
-                                ),
+        return Material(
+          child: Scaffold(
+              appBar: AppBar(
+                  title: const Text('Curves'),
+              ),
+            body: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                    Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Text(curveType,
+                            style: TextStyle(
+                                fontSize: 32.0,
+                                fontWeight: FontWeight.bold,
                             ),
                         ),
-                        Container(
-                            width: 350.0,
-                            height: 350.0,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.withOpacity(0.1),
-                                border: Border.all(
-                                    color: Colors.blueGrey.withOpacity(0.8),
-                                ),
-                            ),
-                            child: Stack(
-                                children: <Widget>[
-                                    AnimatedBox(
-                                        currentCurve: useThisCurve,
-                                        controller: _controller,
-                                    ),
-                                    Column(
-                                        children: <Widget>[
-                                            Row(
-                                              children: <Widget>[
-                                                const Text(
-                                                    ' Start',
-                                                    style: TextStyle(
-                                                        fontSize: 36.0,
-                                                    ),
-                                                ),
+                    ),
+                    GestureDetector(
+                        onTap: () {
+                            _startAnimation();
+                        },
+                        child: Container(
+                          width: 350.0,
+                          height: 350.0,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.1),
+                              border: Border.all(
+                                  color: Colors.blueGrey.withOpacity(0.8),
+                              ),
+                          ),
+                          child: Stack(
+                              children: <Widget>[
+                                  AnimatedBox(
+                                      currentCurve: useThisCurve,
+                                      controller: _controller,
+                                  ),
+                                  Column(
+                                      children: <Widget>[
+                                          Row(
+                                            children: <Widget>[
+                                              const Text(
+                                                  ' Forward from 0',
+                                                  style: TextStyle(
+                                                      fontSize: 36.0,
+                                                  ),
+                                              ),
+                                              const Spacer(
+                                                  flex: 1,
+                                              ),
+                                            ],
+                                          ),
+                                          const Expanded(
+                                              flex: 1,
+                                              child: SizedBox(),
+                                          ),
+                                          Row(
+                                            children: <Widget>[
                                                 const Spacer(
                                                     flex: 1,
                                                 ),
-                                              ],
-                                            ),
-                                            const Expanded(
-                                                flex: 1,
-                                                child: SizedBox(),
-                                            ),
-                                            Row(
-                                              children: <Widget>[
-                                                  const Spacer(
-                                                      flex: 1,
+                                              const Text(
+                                                  'Reverse from 1',
+                                                  style: TextStyle(
+                                                      fontSize: 36.0,
                                                   ),
-                                                const Text(
-                                                    'End ',
-                                                    style: TextStyle(
-                                                        fontSize: 36.0,
-                                                    ),
-                                                ),
-                                              ],
-                                            ),
-                                        ],
-                                    ),
-                                ],
-                            ),
-                        ),
-                    ],
-                ),
+                                              ),
+                                            ],
+                                          ),
+                                      ],
+                                  ),
+                              ],
+                          ),
+                      ),
+                    ),
+                ],
             ),
+          ),
         );
     }
 }

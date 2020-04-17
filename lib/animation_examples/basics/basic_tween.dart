@@ -31,16 +31,52 @@ class _BasicTweenState extends State<BasicTween> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.white,
-      child: Center(
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 10.0),
-          height: animation.value,
-          width: animation.value,
-          child: const FlutterLogo(),
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Basic Tween'),
+        ),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Center(
+                  child: Container(
+                    height: animation.value,
+                    width: animation.value,
+                    child: const FlutterLogo(),
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(vertical: 50,horizontal: 50),
+                child: /// White RaisedButton with elevation set to 10
+                RaisedButton(
+                  onPressed: ()=> controller.forward(from: 0),
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Colors.black38, width: 3),
+                  ),
+                  elevation: 4,
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                    child: Text(
+                      'Replay',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
