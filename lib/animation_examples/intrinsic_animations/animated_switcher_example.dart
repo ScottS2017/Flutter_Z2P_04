@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/app/app_colors.dart';
+import 'package:o4_navigation_and_animation/app/app_images.dart';
 import 'package:o4_navigation_and_animation/app/app_textstyles.dart';
 
 class AnimatedSwitcherExample extends StatefulWidget {
@@ -20,11 +21,16 @@ class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
   /// to animate. It needs a key to tell it there was a change
   final Widget _phoneBackground = const PhoneBackground();
   final Widget _sweepGradientDisc = const SweepGradientDisc();
-  final Widget _musicIcon = const MusicIcon();
+  final Widget _flutterImage = Image.asset(AppImages.flutterLogo);
+  final Widget _houseIcon = Icon(
+    Icons.home,
+    color: AppColors.darkThemeTealVariant,
+    size: 160,
+  );
   final Text _anyText = Text(
     'This can be ANYTHING!',
     semanticsLabel: 'This can be ANYTHING!',
-    textAlign: TextAlign.right,
+    textAlign: TextAlign.center,
     style: AppTextStyles.boldItalic36.copyWith(
       color: const Color(0xFFFF3780),
     ),
@@ -39,8 +45,12 @@ class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
   void _changeFirstBox() {
     setState(() {
       _child == _phoneBackground
-          ? _child = _musicIcon
-          : _child == _musicIcon ? _child = _anyText : _child == _anyText ? _child = _sweepGradientDisc : _child = _phoneBackground;
+          ? _child = _flutterImage
+          : _child == _flutterImage
+              ? _child = _anyText
+              : _child == _anyText
+                  ? _child = _sweepGradientDisc
+                  : _child == _sweepGradientDisc ? _child = _houseIcon : _child = _phoneBackground;
     });
   }
 
@@ -69,55 +79,6 @@ class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class MusicIcon extends StatelessWidget {
-  const MusicIcon({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 200,
-      margin: const EdgeInsets.only(top: 30),
-      padding: const EdgeInsets.all(30),
-      decoration: BoxDecoration(
-        border: Border.all(
-          style: BorderStyle.solid,
-          color: const Color(0xFFBBBBBB),
-          width: 3,
-        ),
-        borderRadius: BorderRadius.circular(100),
-        boxShadow: [
-          const BoxShadow(
-            color: Colors.black87,
-            blurRadius: 12,
-            offset: Offset(4, 6),
-          ),
-        ],
-        gradient: const RadialGradient(
-          colors: [
-            Color(0xFF01D9FE),
-            Color(0xFF0185D0),
-            Color(0xFFFB7EE4),
-            Color(0xFFB7459C),
-          ],
-          stops: [
-            0.3,
-            0.5,
-            0.8,
-            1,
-          ],
-          center: Alignment(0.0, 1.3),
-          focal: Alignment(0.0, 0.9),
-          focalRadius: 2.0,
-        ),
-      ),
-      child: Icon(Icons.audiotrack, size: 132, color: Colors.black38),
     );
   }
 }

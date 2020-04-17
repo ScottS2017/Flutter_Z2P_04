@@ -65,7 +65,7 @@ class _AnimatedSizeExampleState extends State<AnimatedSizeExample> with SingleTi
               padding: const EdgeInsets.symmetric(vertical: 50),
               alignment: Alignment.center,
               child: Container(
-                color: Colors.blue,
+                color: Colors.black,
 
                 /// *********************************************************
                 /// The name AnimatedSize is somewhat deceiving.  Though the size
