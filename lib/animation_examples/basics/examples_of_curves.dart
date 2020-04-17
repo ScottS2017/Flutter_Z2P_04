@@ -105,11 +105,14 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
         return Material(
           child: Scaffold(
               appBar: AppBar(
-                  title: const Text('Curves'),
+                  title: const Text('Examples of Curves'),
               ),
             body: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                    const Spacer(
+                        flex: 30,
+                    ),
                     Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Text(curveType,
@@ -119,62 +122,70 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
                             ),
                         ),
                     ),
-                    GestureDetector(
-                        onTap: () {
-                            _startAnimation();
-                        },
-                        child: Container(
-                          width: 350.0,
-                          height: 350.0,
-                          decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.1),
-                              border: Border.all(
-                                  color: Colors.blueGrey.withOpacity(0.8),
-                              ),
-                          ),
-                          child: Stack(
-                              children: <Widget>[
-                                  AnimatedBox(
-                                      currentCurve: useThisCurve,
-                                      controller: _controller,
-                                  ),
-                                  Column(
-                                      children: <Widget>[
-                                          Row(
-                                            children: <Widget>[
-                                              const Text(
-                                                  ' Forward from 0',
-                                                  style: TextStyle(
-                                                      fontSize: 36.0,
-                                                  ),
-                                              ),
-                                              const Spacer(
-                                                  flex: 1,
-                                              ),
-                                            ],
-                                          ),
-                                          const Expanded(
-                                              flex: 1,
-                                              child: SizedBox(),
-                                          ),
-                                          Row(
-                                            children: <Widget>[
+                    const Spacer(
+                        flex: 5,
+                    ),
+                    Center(
+                      child: GestureDetector(
+                          onTap: () {
+                              _startAnimation();
+                          },
+                          child: Container(
+                            width: 350.0,
+                            height: 350.0,
+                            decoration: BoxDecoration(
+                                color: Colors.grey.withOpacity(0.1),
+                                border: Border.all(
+                                    color: Colors.blueGrey.withOpacity(0.8),
+                                ),
+                            ),
+                            child: Stack(
+                                children: <Widget>[
+                                    AnimatedBox(
+                                        currentCurve: useThisCurve,
+                                        controller: _controller,
+                                    ),
+                                    Column(
+                                        children: <Widget>[
+                                            Row(
+                                              children: <Widget>[
+                                                const Text(
+                                                    'Start (Dismissed)',
+                                                    style: TextStyle(
+                                                        fontSize: 36.0,
+                                                    ),
+                                                ),
                                                 const Spacer(
                                                     flex: 1,
                                                 ),
-                                              const Text(
-                                                  'Reverse from 1',
-                                                  style: TextStyle(
-                                                      fontSize: 36.0,
+                                              ],
+                                            ),
+                                            const Expanded(
+                                                flex: 1,
+                                                child: SizedBox(),
+                                            ),
+                                            Row(
+                                              children: <Widget>[
+                                                  const Spacer(
+                                                      flex: 1,
                                                   ),
-                                              ),
-                                            ],
-                                          ),
-                                      ],
-                                  ),
-                              ],
-                          ),
+                                                const Text(
+                                                    'Completed (End)',
+                                                    style: TextStyle(
+                                                        fontSize: 36.0,
+                                                    ),
+                                                ),
+                                              ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ),
                       ),
+                    ),
+                    const Spacer(
+                        flex: 65,
                     ),
                 ],
             ),
