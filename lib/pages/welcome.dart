@@ -84,8 +84,8 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         const Text(
-                          '\Things You Can Touch\nand State Managment',
-                          semanticsLabel: 'Arranging Widgets You Can See',
+                          'Navigation\nand Animation',
+                          semanticsLabel: 'Navigation and Animation',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 32,

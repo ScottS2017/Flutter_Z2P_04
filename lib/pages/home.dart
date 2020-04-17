@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/gesture_detector_example.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/hera_self_contained_example.dart';
+import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/provider_example.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/regular_button_examples.dart';
 import 'package:o4_navigation_and_animation/widgets/exercises/buttons_exercises.dart';
 import 'package:o4_navigation_and_animation/widgets/exercises/provider_exercise.dart';
 import 'package:o4_navigation_and_animation/widgets/solutions/buttons_solution.dart';
@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
     /// is determined by this list. Each page number, from 0 to whatever,
     /// has a corresponding element in this List (think of it as an array element)
 
-    const RegularButtonExamples(),
+    const NavigationAndRoutes(),
     const ButtonsExercises(),
     const ButtonsSolution(),
     const GestureDetectorExample(),
