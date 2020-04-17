@@ -36,7 +36,17 @@ class AppColors {
   static const Color primaryDarkDarkYellow = Color(0xffc7a500);
 
   // Dark Theme
-  static const Color darkThemeWhite = Color(0xFFE1E1E1);
+  // Text Opacity Values
+  static const Color darkThemeWhiteText100pctOpacityIsDisabledColor = Color(0xFFFFFFFF);
+  static const Color darkThemeWhiteText87pctOpacity = Color(0xDDFFFFFF);
+  static const Color darkThemeWhiteText60pctOpacity = Color(0x99FFFFFF);
+  static const Color darkThemeWhiteText30pctOpacityIsDisabledColor = Color(0x4CFFFFFF);
+  static const Color darkThemeBlackText100pctOpacity = Color(0xFF000000);
+  static const Color darkThemeBlackText87pctOpacity = Color(0xDD000000);
+  static const Color darkThemeBlackText60pctOpacity = Color(0x99000000);
+  static const Color darkThemeBlackText30pctOpacityIsDisabledColor = Color(0x4C000000);
+
+  // Background Values (as solid colors on black background)
   static const Color darkThemeNoElevation = Color(0xFF121212);
   static const Color darkThemeCard = Color(0xFF1D1D1D);
   static const Color darkThemeAppBar = Color(0xFF1F1F1F);
@@ -57,10 +67,10 @@ class AppColors {
 
   static Color darkThemePurplePrimary = Colors.purple[200];
   static Color darkThemePurpleVariant = Colors.purple[700];
-  static const Color darkThemeTealAccent = Color(0xFF03DAC6);
-  static Color darkThemeTealPrimary = Colors.teal[200];
-  static Color darkThemeTealVariant = Colors.teal[800];
-  static Color darkThemeOrangePrimary = Colors.orange[200];
-  static Color darkThemeOrangeAccent = Colors.orange[500];
-  static Color darkThemeOrangeVariant = Colors.orange[700];
+  static const Color darkThemeTealAccent = Color(0x4D03DAC6);
+  static  Color darkThemeTealPrimary = Colors.teal[200];
+  static  Color darkThemeTealVariant = Colors.teal[800];
+  static  Color darkThemeOrangePrimary = Colors.orange[200];
+  static  Color darkThemeOrangeAccent = Colors.orange[500];
+  static  Color darkThemeOrangeVariant = Colors.orange[700];
 }
