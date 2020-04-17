@@ -1,12 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-
+import 'package:o4_navigation_and_animation/app/app_colors.dart';
 
 /// This was only broken out into its own class to make it easier to understand
 /// Normally, you would just have the AnimatedContainer placed in the UI, instead
 /// of creating a custom Widget and calling it in like this.
 class TheContainerBeingAnimated extends StatelessWidget {
-
   /// Create a variable for each property being animated
   final double currentHeight;
   final double currentWidth;
@@ -67,6 +66,10 @@ class TheContainerBeingAnimated extends StatelessWidget {
 /// as use the AnimatedContainer in a UI
 
 class AnimatedContainerExample extends StatefulWidget {
+  const AnimatedContainerExample({
+    Key key,
+  }) : super(key: key);
+
   @override
   _AnimatedContainerExampleState createState() => _AnimatedContainerExampleState();
 }
@@ -84,7 +87,6 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
   /// With Stateless Widgets, always initialize your variables in initState
   @override
   void initState() {
-
     /// Don't forget to call the State's initState function first
     /// You don't always *have to* make it first but if you put it first
     /// then its dispose() will be the last one called. This could be important
@@ -201,130 +203,136 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
   /// Create the UI
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          Container(
-            height: 350,
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            alignment: Alignment.center,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('AnimatedContainer'),
+        backgroundColor: AppColors.darkThemeTealVariant,
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 350,
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              alignment: Alignment.center,
 
-            /// Call the custom AnimatedContainer from above
-            child: TheContainerBeingAnimated(
-              currentHeight: currentHeight,
-              currentWidth: currentWidth,
-              currentVerticalPadding: currentVerticalPadding,
-              currentHorizontalPadding: currentHorizontalPadding,
-              currentColor: currentColor,
-              currentBorderColor: currentBorderColor,
-              currentBorderWidth: currentBorderWidth,
-              currentBorderRadius: currentBorderRadius,
+              /// Call the custom AnimatedContainer from above
+              child: TheContainerBeingAnimated(
+                currentHeight: currentHeight,
+                currentWidth: currentWidth,
+                currentVerticalPadding: currentVerticalPadding,
+                currentHorizontalPadding: currentHorizontalPadding,
+                currentColor: currentColor,
+                currentBorderColor: currentBorderColor,
+                currentBorderWidth: currentBorderWidth,
+                currentBorderRadius: currentBorderRadius,
+              ),
             ),
-          ),
 
-          /// The rest of the UI is all of the buttons
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeColor,
-                  text: 'Color',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeBorderColor,
-                  text: 'Border Color',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-              ],
+            /// The rest of the UI is all of the buttons
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeColor,
+                    text: 'Color',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeBorderColor,
+                    text: 'Border Color',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeHeight,
-                  text: 'Height',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeWidth,
-                  text: 'Width',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-              ],
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeHeight,
+                    text: 'Height',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeWidth,
+                    text: 'Width',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeVerticalPadding,
-                  text: 'Vertical Padding',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeHorizontalPadding,
-                  text: 'Horizontal Padding',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-              ],
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeVerticalPadding,
+                    text: 'Vertical Padding',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeHorizontalPadding,
+                    text: 'Horizontal Padding',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeBorderRadius,
-                  text: 'Border Radius',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                CustomButton(
-                  callback: changeBorderWidth,
-                  text: 'Border Width',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-              ],
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeBorderRadius,
+                    text: 'Border Radius',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomButton(
+                    callback: changeBorderWidth,
+                    text: 'Border Width',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Spacer(),
-        ],
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

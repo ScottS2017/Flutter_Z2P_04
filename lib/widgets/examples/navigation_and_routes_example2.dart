@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/app/app_colors.dart';
 import 'package:o4_navigation_and_animation/app/app_textstyles.dart';
+import 'package:o4_navigation_and_animation/pages/home_teal.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example.dart';
 
 class NavigationAndRoutesPage2 extends StatefulWidget {
@@ -44,10 +45,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
             RaisedButton(
               onPressed: () {
                 // ignore: strict_raw_type
-                Navigator.push<MaterialPageRoute>(
-                  context,
+                Navigator.of(context).push<void>(
                   MaterialPageRoute(
-                    builder: (context) => const NavigationAndRoutes(),
+                    builder: (context) => const HomeTeal(),
                   ),
                 );
               },
@@ -116,8 +116,7 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
               /// not be in the stack when you try to go back (pop)
               /// from the next page and you'll end up at the
               /// Welcome page instead of coming back here.
-              onPressed: () => Navigator.pushNamed(
-                context,
+              onPressed: () => Navigator.of(context).pushNamed(
                 '/routes_one',
               ),
               color: AppColors.darkThemeWhiteText87pctOpacity,
@@ -177,7 +176,7 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
             /// Pop Button ***********************
             RaisedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.of(context).pop();
               },
               color: AppColors.darkThemeWhiteText87pctOpacity,
               shape: RoundedRectangleBorder(

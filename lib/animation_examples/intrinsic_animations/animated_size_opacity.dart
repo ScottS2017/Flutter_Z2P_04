@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:o4_navigation_and_animation/app/app_colors.dart';
 
 class AnimatedSizeExample extends StatefulWidget {
+  const AnimatedSizeExample({
+    Key key,
+  }) : super(key: key);
   @override
   _AnimatedSizeExampleState createState() => _AnimatedSizeExampleState();
 }
@@ -29,11 +33,10 @@ class _AnimatedSizeExampleState extends State<AnimatedSizeExample> with SingleTi
     setState(() {});
   }
 
-  void _changeOpacity(){
+  void _changeOpacity() {
     _opacity == 1.0 ? _opacity = 0.1 : _opacity = 1.0;
     setState(() {});
   }
-
 
   @override
   void initState() {
@@ -45,124 +48,130 @@ class _AnimatedSizeExampleState extends State<AnimatedSizeExample> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          Container(
-            height: 500,
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 50),
-            alignment: Alignment.center,
-            child: Container(
-              color: Colors.blue,
-
-              /// *********************************************************
-              /// The name AnimatedSize is somewhat deceiving.  Though the size
-              /// of the AnimatedSize does get animated, the size of the child changes
-              /// instantly.
-              ///
-              /// If the child is larger than the AnimatedSize, then
-              /// you get an effect like the AnimatedSize is revealing the larger
-              /// child as if the child is "behind" the AnimatedSize.
-              ///
-              /// If the child changes in a way that makes it small than the AnimatedSize,
-              /// you get an instant change of the child but then it moves because
-              /// the AnimatedSize changing its size is causing it to be aligned to
-              /// a different place each frame, since the size of the AnimatedSize
-              /// keeps changing.
-              ///
-              /// If you are truly looking to animate the size of an object over time
-              /// then an AnimatedContainer might be a better choice.
-              child: AnimatedSize(
-                vsync: this,
-                duration: const Duration(seconds: 2),
-                alignment: Alignment.bottomLeft,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('AnimatedSize'),
+        backgroundColor: AppColors.darkThemeTealVariant,
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 500,
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 50),
+              alignment: Alignment.center,
+              child: Container(
+                color: Colors.blue,
 
                 /// *********************************************************
-                /// AnimatedOpacity is as easy as it gets. Just change the opacity
-                /// value and tell it how long you want the transition to take. You can
-                /// use a variable to set different durations, too.
-                child: AnimatedOpacity(
-                  duration: _opacityAnimationDuration ,
-                  opacity: _opacity,
-                  child: Container(
-                    height: _height,
-                    width: _width,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Colors.red, Colors.yellow],
-                          stops: [0.5, 0.5],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight),
+                /// The name AnimatedSize is somewhat deceiving.  Though the size
+                /// of the AnimatedSize does get animated, the size of the child changes
+                /// instantly.
+                ///
+                /// If the child is larger than the AnimatedSize, then
+                /// you get an effect like the AnimatedSize is revealing the larger
+                /// child as if the child is "behind" the AnimatedSize.
+                ///
+                /// If the child changes in a way that makes it small than the AnimatedSize,
+                /// you get an instant change of the child but then it moves because
+                /// the AnimatedSize changing its size is causing it to be aligned to
+                /// a different place each frame, since the size of the AnimatedSize
+                /// keeps changing.
+                ///
+                /// If you are truly looking to animate the size of an object over time
+                /// then an AnimatedContainer might be a better choice.
+                child: AnimatedSize(
+                  vsync: this,
+                  duration: const Duration(seconds: 2),
+                  alignment: Alignment.bottomLeft,
+
+                  /// *********************************************************
+                  /// AnimatedOpacity is as easy as it gets. Just change the opacity
+                  /// value and tell it how long you want the transition to take. You can
+                  /// use a variable to set different durations, too.
+                  child: AnimatedOpacity(
+                    duration: _opacityAnimationDuration,
+                    opacity: _opacity,
+                    child: Container(
+                      height: _height,
+                      width: _width,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Colors.red, Colors.yellow],
+                            stops: [0.5, 0.5],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                const SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: RaisedButton(
-                    onPressed: _changeHeight,
-                    child: Container(
-                      height: 50,
-                      width: double.infinity,
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'Change Height',
-                        textAlign: TextAlign.center,
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: RaisedButton(
+                      onPressed: _changeHeight,
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        alignment: Alignment.center,
+                        child: const Text(
+                          'Change Height',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: RaisedButton(
-                    onPressed: _changeWidth,
-                    child: Container(
-                      height: 50,
-                      width: double.infinity,
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'Change Width',
-                        textAlign: TextAlign.center,
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: RaisedButton(
+                      onPressed: _changeWidth,
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        alignment: Alignment.center,
+                        child: const Text(
+                          'Change Width',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          RaisedButton(
-            onPressed: _changeOpacity,
-            child: const FractionallySizedBox(
-              widthFactor: 0.5,
-              alignment: Alignment.center,
-              child: Text(
-                'Change Opacity',
-                textAlign: TextAlign.center,
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
               ),
             ),
-          ),
-          const Spacer(),
-        ],
+            const SizedBox(
+              height: 10,
+            ),
+            RaisedButton(
+              onPressed: _changeOpacity,
+              child: const FractionallySizedBox(
+                widthFactor: 0.5,
+                alignment: Alignment.center,
+                child: Text(
+                  'Change Opacity',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

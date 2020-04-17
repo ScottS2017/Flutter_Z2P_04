@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/animation_examples/basics/basic_animations_home.dart';
+import 'package:o4_navigation_and_animation/animation_examples/intrinsic_animations/intrinsic_animations_home.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example2.dart';
 
 
@@ -17,6 +18,12 @@ class _HomeOrangeState extends State<HomeOrange> {
     initialPage: 0,
   );
 
+  @override
+  void dispose(){
+    controller.dispose();
+    super.dispose();
+  }
+
   List<Widget> pages = [
     /// As the PageView is scrolled right or left, the page content shown
     /// is determined by this list. Each page number, from 0 to whatever,
@@ -24,6 +31,7 @@ class _HomeOrangeState extends State<HomeOrange> {
 
     const NavigationAndRoutesPage2(),
     const BasicAnimationsHome(),
+    const IntrinsicAnimationsHome(),
   ];
 
   /// This is where the UI is laid out. It's the "Blueprint", if you will.
@@ -33,6 +41,7 @@ class _HomeOrangeState extends State<HomeOrange> {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: controller,
       scrollDirection: Axis.horizontal,
       children: pages,
     );

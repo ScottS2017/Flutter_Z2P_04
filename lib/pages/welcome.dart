@@ -39,11 +39,12 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
   Future<Timer> offstageTimer() async {
     return Timer(
       const Duration(seconds: 5),
-      () => setState(
-        () {
-          _splashScreenIsOnstage = false;
-        },
-      ),
+        () =>
+        setState(
+            () {
+            _splashScreenIsOnstage = false;
+          },
+        ),
     );
   }
 

@@ -40,11 +40,11 @@ class AppColors {
   static const Color darkThemeWhiteText100pctOpacityIsDisabledColor = Color(0xFFFFFFFF);
   static const Color darkThemeWhiteText87pctOpacity = Color(0xDDFFFFFF);
   static const Color darkThemeWhiteText60pctOpacity = Color(0x99FFFFFF);
-  static const Color darkThemeWhiteText30pctOpacityIsDisabledColor = Color(0x4CFFFFFF);
+  static const Color darkThemeWhiteText30pctOpacity = Color(0x4CFFFFFF);
   static const Color darkThemeBlackText100pctOpacity = Color(0xFF000000);
   static const Color darkThemeBlackText87pctOpacity = Color(0xDD000000);
   static const Color darkThemeBlackText60pctOpacity = Color(0x99000000);
-  static const Color darkThemeBlackText30pctOpacityIsDisabledColor = Color(0x4C000000);
+  static const Color darkThemeBlackText30pctOpacity = Color(0x4C000000);
 
   // Background Values (as solid colors on black background)
   static const Color darkThemeNoElevation = Color(0xFF121212);

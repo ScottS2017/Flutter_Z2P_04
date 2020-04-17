@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:o4_navigation_and_animation/pages/home_orange.dart';
+import 'package:o4_navigation_and_animation/pages/home_teal.dart';
 import 'package:o4_navigation_and_animation/pages/welcome.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example2.dart';
@@ -32,8 +34,8 @@ class NavigationRoutesAndAnimation extends StatelessWidget {
         '/': (context) => const Welcome(),
         /// When navigating to any other page (route), you can associate the page
         /// with the name of the route in the route table, here.
-        '/routes_one': (context) => const NavigationAndRoutes(),
-        '/routes_two': (context) => const NavigationAndRoutesPage2(),
+        '/routes_one': (context) => const HomeTeal(),
+        '/routes_two': (context) => const HomeOrange(),
       },
     );
   }
