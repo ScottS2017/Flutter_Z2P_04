@@ -13,29 +13,38 @@ class _AnimatedSizeExampleState extends State<AnimatedSizeExample> with SingleTi
   double _height;
   double _width;
   double _opacity;
+
   final Duration _opacityAnimationDuration = const Duration(seconds: 2);
 
+  /// Remember to read these as "setStateAfter"
   void _changeHeight() {
-    if (_height == 300) {
-      _height = 100;
-    } else {
-      _height = 300;
-    }
-    setState(() {});
+    setState(() {
+      if (_height == 300) {
+        _height = 100;
+      } else {
+        _height = 300;
+      }
+    });
   }
 
   void _changeWidth() {
-    if (_width == 300) {
-      _width = 50;
-    } else {
-      _width = 300;
-    }
-    setState(() {});
+    setState(() {
+      if (_width == 300) {
+        _width = 50;
+      } else {
+        _width = 300;
+      }
+    });
   }
 
   void _changeOpacity() {
-    _opacity == 1.0 ? _opacity = 0.1 : _opacity = 1.0;
-    setState(() {});
+    setState(() {
+      if (_opacity == 1.0) {
+        _opacity = 0.1;
+      } else {
+        _opacity = 1.0;
+      }
+    });
   }
 
   @override
@@ -86,7 +95,7 @@ class _AnimatedSizeExampleState extends State<AnimatedSizeExample> with SingleTi
                 /// then an AnimatedContainer might be a better choice.
                 child: AnimatedSize(
                   vsync: this,
-                  duration: const Duration(seconds: 2),
+                  duration: _opacityAnimationDuration,
                   alignment: Alignment.bottomLeft,
 
                   /// *********************************************************

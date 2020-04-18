@@ -12,13 +12,12 @@ class AnimatedSwitcherExample extends StatefulWidget {
 }
 
 class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
-  Widget _child;
-
   /// If you're changing to another widget of the same type but didn't use a key, it won't work.
   /// This is because the framework is checking for changes in the element layer, and the element layer
   /// is a listing of types and keys. If the Widget type didn't change, and there is no key to tell
   /// the framework that the new item is a different instance than the old one, then it's not going
   /// to animate. It needs a key to tell it there was a change
+  Widget _child;
   final Widget _phoneBackground = const PhoneBackground();
   final Widget _sweepGradientDisc = const SweepGradientDisc();
   final Widget _flutterImage = Image.asset(AppImages.flutterLogo);

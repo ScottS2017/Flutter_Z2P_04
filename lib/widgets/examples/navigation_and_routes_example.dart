@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/app/app_colors.dart';
 import 'package:o4_navigation_and_animation/app/app_textstyles.dart';
 import 'package:o4_navigation_and_animation/pages/home_orange.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example2.dart';
 
 class NavigationAndRoutes extends StatefulWidget {
   const NavigationAndRoutes({
@@ -71,9 +70,9 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                       style: AppTextStyles.bold24.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -92,9 +91,9 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                       style: AppTextStyles.normal18.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -139,9 +138,9 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                       style: AppTextStyles.bold24.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -157,9 +156,9 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                       style: AppTextStyles.normal18.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -198,9 +197,9 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                       style: AppTextStyles.bold24.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -214,9 +213,9 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                       style: AppTextStyles.normal18.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],

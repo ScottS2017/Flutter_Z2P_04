@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/animation_examples/basics/basic_animations_home.dart';
 import 'package:o4_navigation_and_animation/animation_examples/intrinsic_animations/intrinsic_animations_home.dart';
 import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example2.dart';
+import 'package:o4_navigation_and_animation/widgets/solutions/navigation_solution.dart';
 
 
 class HomeOrange extends StatefulWidget {
@@ -30,6 +31,7 @@ class _HomeOrangeState extends State<HomeOrange> {
     /// has a corresponding element in this List (think of it as an array element)
 
     const NavigationAndRoutesPage2(),
+    const NavigationSolution(),
     const BasicAnimationsHome(),
     const IntrinsicAnimationsHome(),
   ];
