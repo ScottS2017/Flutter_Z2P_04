@@ -51,7 +51,7 @@ class _IntrinsicAnimationsWelcomeState extends State<IntrinsicAnimationsWelcome>
               const Expanded(
                 flex: 80,
                 child:  Text(
-                  '\n      EDIT THIS',
+                  '\n      "Intrinsic" animations are animations built into the Flutter framework in order to make our lives easier. They handle the more routine things you might want to animate, from the opacity of your Widget to its size (in either dimension), padding, rotation, scale or color. \n\n     One of the most powerful of these is the AnimatedContainer, which has more than enough capability to handle almost anything you might need, or want.',
                   semanticsLabel: 'EDIT THIS',
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -64,7 +64,7 @@ class _IntrinsicAnimationsWelcomeState extends State<IntrinsicAnimationsWelcome>
                 flex: 10,
                 child: Text(
                   '\nSwipe Up to Continue\n',
-                  semanticsLabel: 'Press And Hold Anywhere to Continue',
+                  semanticsLabel: 'Swipe Up to Continue',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 24,
