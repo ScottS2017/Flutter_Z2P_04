@@ -42,14 +42,46 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   Widget build(BuildContext context) {
     /// 1.0 timeDilation is normal animation speed
     timeDilation = 1.0;
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () {
-        _playAnimation(directionIsForward);
-        directionIsForward = !directionIsForward;
-      },
-      child: Center(
-        child: StaggeredAnimation(controller: _controller.view),
+    return Center(
+      child: Column(
+        children: <Widget>[
+          Expanded(
+            child: StaggeredAnimation(controller: _controller.view),
+          ),
+
+          /// Play button
+          Container(
+            width: double.infinity,
+            color: Colors.white,
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 100),
+              color: Colors.white,
+              child: RaisedButton(
+                onPressed: () {
+                  _playAnimation(directionIsForward);
+                  directionIsForward = !directionIsForward;
+                },
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: BorderSide(color: Colors.black38, width: 3),
+                ),
+                elevation: 4,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Text(
+                    'Play',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -175,37 +207,38 @@ class StaggeredAnimation extends StatelessWidget {
         ),
         super(key: key);
 
-  /// This function is called each time the controller "ticks" a new frame.
-  /// When it runs, the controller's new value will be used to calculate the
-  /// new animation values for the next frame
+  /// The build is called each time the controller "ticks" and the
+  /// controller's value is updated. When build runs, the controller's
+  /// updated value will be used to recalculate each parameter's
+  /// new value for the frame being rendered.
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Material(
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Staggered Animations'),
         ),
-
         body: Container(
-      padding: const EdgeInsets.all(8.0),
-      alignment: Alignment.center,
-      child: Opacity(
-        opacity: opacity.value,
-        child: Container(
-          width: width.value,
-          height: height.value,
+          padding: const EdgeInsets.all(8.0),
           alignment: Alignment.center,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.lightBlue[200],
-              width: 3.0,
+          color: Colors.white,
+          child: Opacity(
+            opacity: opacity.value,
+            child: Container(
+              width: width.value,
+              height: height.value,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.lightBlue[200],
+                  width: 3.0,
+                ),
+                borderRadius: radius.value,
+              ),
+              child: const FlutterLogo(
+                size: 200.0,
+              ),
             ),
-            borderRadius: radius.value,
           ),
-          child: const FlutterLogo(
-            size: 200.0,
-          ),
-        ),
-      ),
         ),
       ),
     );

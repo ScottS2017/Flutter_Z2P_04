@@ -80,12 +80,11 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                     ),
                     Text(
                       'onPressed: () {\n'
-                      '     Navigator.push(\n'
-                      '          context,\n'
-                      '          MaterialPageRoute(builder:\n'
-                      '               (context) => NavigationAndRoutesPage2(),\n'
-                      '          ),\n'
-                      '     );\n'
+                      '  Navigator.of(context).push<void>(\n'
+                      '    MaterialPageRoute(\n'
+                      '      builder: (context) => const HomeOrange(),\n'
+                      '    ),\n'
+                      '  );\n'
                       '},',
                       textAlign: TextAlign.left,
                       style: AppTextStyles.normal18.copyWith(
@@ -148,9 +147,8 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                     ),
                     Text(
                       "onPressed: () => "
-                      "\n  Navigator.pushNamed("
-                      "\n  context,"
-                      "\n  /routes_two',"
+                        "\n  Navigator.of(context).pushNamed("
+                        "\n  /routes_two,"
                       "\n),",
                       textAlign: TextAlign.left,
                       style: AppTextStyles.normal18.copyWith(
@@ -207,7 +205,7 @@ class _NavigationAndRoutesState extends State<NavigationAndRoutes> {
                     ),
                     Text(
                       'onPressed: () {\n'
-                      '     Navigator.pop(context);\n'
+                      '     Navigator.of(context).pop();\n'
                       '},',
                       textAlign: TextAlign.left,
                       style: AppTextStyles.normal18.copyWith(
