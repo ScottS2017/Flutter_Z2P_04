@@ -46,7 +46,7 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
       await _controller.forward().orCancel;
       await _controller.reverse().orCancel;
     } on TickerCanceled {
-      print('Animation Failed');
+      print('Animation Canceled');
     }
   }
 

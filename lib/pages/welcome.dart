@@ -39,12 +39,11 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
   Future<Timer> offstageTimer() async {
     return Timer(
       const Duration(seconds: 5),
-        () =>
-        setState(
-            () {
-            _splashScreenIsOnstage = false;
-          },
-        ),
+      () => setState(
+        () {
+          _splashScreenIsOnstage = false;
+        },
+      ),
     );
   }
 
@@ -67,42 +66,46 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                 padding: const EdgeInsets.all(8),
                 color: Colors.white,
                 alignment: Alignment.topLeft,
-                child: SingleChildScrollView(
-                  child: Container(
-                    height: MediaQuery.of(context).size.height - 16 - MediaQuery.of(context).padding.top,
-                    width: MediaQuery.of(context).size.width - 16,
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFDDDDDD),
-                      border: Border.all(
-                        style: BorderStyle.solid,
-                        width: 5,
-                        color: const Color(0xFF888888),
-                      ),
-                      borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  height: MediaQuery.of(context).size.height - 16 - MediaQuery.of(context).padding.top,
+                  width: MediaQuery.of(context).size.width - 16,
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFDDDDDD),
+                    border: Border.all(
+                      style: BorderStyle.solid,
+                      width: 5,
+                      color: const Color(0xFF888888),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        const Text(
-                          'Navigation\nand Animation',
-                          semanticsLabel: 'Navigation and Animation',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 32,
-                            color: Colors.black,
-                          ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      const Text(
+                        'Navigation\nand Animation',
+                        semanticsLabel: 'Navigation and Animation',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.black,
                         ),
-                        const Text(
-                          '\n      EDIT THIS',
-                          semanticsLabel: 'EDIT THIS',
+                      ),
+                      const Expanded(
+                        flex: 80,
+                        child: Text(
+                          "\n      Here, we'll look at getting from page to page, getting back, and we'll have a look at Flutter's animation capabilities.\n\n     Flutter not only makes it easy to do custom animaitons, it has pre-built solutions for the most common animation problems you might run into. ",
+                          semanticsLabel: "Here, we'll look at getting from page to page, getting back, and we'll have a look at Flutter's animation capabilities. Flutter not only makes it easy to do custom animaitons, it has pre-built solutions for the most common animation problems you might run into. ",
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 24,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
+                      ),
+                      const SizedBox(
+                        height: 100,
+                        child: Text(
                           '\nPress And Hold\nAnywhere to Continue\n',
                           semanticsLabel: 'Press And Hold Anywhere to Continue',
                           textAlign: TextAlign.center,
@@ -111,8 +114,8 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                             color: Colors.black,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),

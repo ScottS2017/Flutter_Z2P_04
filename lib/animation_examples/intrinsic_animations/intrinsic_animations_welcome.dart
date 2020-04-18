@@ -36,23 +36,19 @@ class _IntrinsicAnimationsWelcomeState extends State<IntrinsicAnimationsWelcome>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Expanded(
-                flex: 10,
-                child:  Text(
-                  'Intrinsic\nAnimations',
-                  semanticsLabel: 'Intrinsic Animations',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 32,
-                    color: Colors.black,
-                  ),
+             const Text(
+                'Intrinsic\nAnimations',
+                semanticsLabel: 'Intrinsic Animations',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.black,
                 ),
               ),
               const Expanded(
-                flex: 80,
                 child:  Text(
                   '\n      "Intrinsic" animations are animations built into the Flutter framework in order to make our lives easier. They handle the more routine things you might want to animate, from the opacity of your Widget to its size (in either dimension), padding, rotation, scale or color. \n\n     One of the most powerful of these is the AnimatedContainer, which has more than enough capability to handle almost anything you might need, or want.',
-                  semanticsLabel: 'EDIT THIS',
+                  semanticsLabel: '"Intrinsic" animations are animations built into the Flutter framework in order to make our lives easier. They handle the more routine things you might want to animate, from the opacity of your Widget to its size (in either dimension), padding, rotation, scale or color. One of the most powerful of these is the AnimatedContainer, which has more than enough capability to handle almost anything you might need, or want.',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 24,
@@ -60,16 +56,13 @@ class _IntrinsicAnimationsWelcomeState extends State<IntrinsicAnimationsWelcome>
                   ),
                 ),
               ),
-              const Expanded(
-                flex: 10,
-                child: Text(
-                  '\nSwipe Up to Continue\n',
-                  semanticsLabel: 'Swipe Up to Continue',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                  ),
+              const Text(
+                '\nSwipe Right for Basic Animations\n\nSwipe Up for Examples\n',
+                semanticsLabel: 'Swipe Right for Basic Animations, Swipe Up for Examples',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
                 ),
               ),
             ],

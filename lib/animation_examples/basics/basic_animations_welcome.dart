@@ -37,20 +37,16 @@ class _BasicAnimationsWelcomeState extends State<BasicAnimationsWelcome>{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Expanded(
-                flex: 10,
-                child:  Text(
-                  'Basic\nAnimations',
-                  semanticsLabel: 'Basic Animations',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 32,
-                    color: Colors.black,
-                  ),
+              const Text(
+                'Basic\nAnimations',
+                semanticsLabel: 'Basic Animations',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.black,
                 ),
               ),
               const Expanded(
-                flex: 80,
                 child:  Text(
                   '\n      Here we\'ll take a look at some of the more simple '
                     'approaches to animation including simple Tweens and '
@@ -67,16 +63,13 @@ class _BasicAnimationsWelcomeState extends State<BasicAnimationsWelcome>{
                   ),
                 ),
               ),
-              const Expanded(
-                flex: 10,
-                child: Text(
-                  '\nSwipe Up to Continue\n',
-                  semanticsLabel: 'Swipe Up to Continue',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                  ),
+              const Text(
+                '\nSwipe Left for Intrinsic Animations\n\nSwipe Up for Examples\n',
+                semanticsLabel: 'Swipe  Left for Intrinsic Animations, Swipe Up for Examples',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
                 ),
               ),
             ],
