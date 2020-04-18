@@ -52,8 +52,14 @@ class _BasicAnimationsWelcomeState extends State<BasicAnimationsWelcome>{
               const Expanded(
                 flex: 80,
                 child:  Text(
-                  '\n      EDIT THIS',
-                  semanticsLabel: 'EDIT THIS',
+                  '\n      Here we\'ll take a look at some of the more simple '
+                    'approaches to animation including simple Tweens and '
+                    'using a StatusListener to know when a Tween is at the '
+                    'beginning, end, or is running forwards or backwards.\n\n'
+                    '     We\'ll cover simple Physics animations, several animation '
+                    'Curves and then take a look at how to stagger a sequence '
+                    'of animations all along the duration of a single, shared controller.',
+                  semanticsLabel: "Here we'll take a look at some of the more simpleapproaches to animation including simple Tweens andusing a StatusListener to know if a Tween is at the beginning, end, or is running forwards or backwards. We'll cover simple Physics animations, several animation Curves and then take a look at how to stagger a sequence of animations all along the duration of a single, shared controller.",
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 24,
@@ -65,7 +71,7 @@ class _BasicAnimationsWelcomeState extends State<BasicAnimationsWelcome>{
                 flex: 10,
                 child: Text(
                   '\nSwipe Up to Continue\n',
-                  semanticsLabel: 'Press And Hold Anywhere to Continue',
+                  semanticsLabel: 'Swipe Up to Continue',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 24,

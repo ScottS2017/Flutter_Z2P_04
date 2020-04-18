@@ -28,12 +28,12 @@ class _BasicTweenWithStatusListenerState extends State<BasicTweenWithStatusListe
       /// notifications for this with addStatusListener(). These are the
       /// different status you will see:
       ///
-      /// Start = "dismissed"
+      /// Sitting at the Start = "dismissed" (Don't blame me, I didn't name it)
       /// "forward"
-      /// end = "completed"
+      /// Sitting at the End = "completed"
       /// "reverse"
-      /// Once we arrive at the beginning again, the status goes
-      /// back to dismissed
+      /// Once we arrive back at the beginning, the status goes
+      /// back to "dismissed"
       ///
       /// The following code listens for a state change and prints an update.
 
