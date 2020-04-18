@@ -40,7 +40,8 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    /// 1.0 timeDilation is normal animation speed
+    /// 1.0 timeDilation is normal speed, but this can be set to
+    /// something else to speed the animation up or slow it down
     timeDilation = 1.0;
     return Center(
       child: Column(
@@ -49,7 +50,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
             child: StaggeredAnimation(controller: _controller.view),
           ),
 
-          /// Play button
+          /// This Container is for the play button
           Container(
             width: double.infinity,
             color: Colors.white,
@@ -97,28 +98,42 @@ class StaggeredAnimation extends StatelessWidget {
   final Animation<Color> color;
   final Animation<double> rotate;
 
-  /// This is the juicy stuff!
   /// Each of these sections is a separate animation
+  /// We'll walk though the first one (opacity) but the points
+  /// covered here apply to all the other parameters being
+  /// animated, as well.
   StaggeredAnimation({Key key, this.controller})
 
-      /// The property we're animating is opacity
       : opacity = Tween<double>(
-          /// Begin animating this at 0.0% alpha and end at 100% alpha
+          /// Begin animating this at 0.0% and end at 100%.
+    /// Things that range from 0 to 1 are usually percentages
+    /// but we can animate between two numbers, as well. The
+    /// begin number will be considered 0% of the duration and
+    /// the end number will be reached when the ticker
+    /// reaches 100% of whatever duration you specify.
           begin: 0.0,
           end: 1.0,
         ).animate(
           /// We're going to use a curve
           CurvedAnimation(
-            /// Set our controller as the parent
+            /// Set our controller as the parent of our curve. The curve
+            /// knows where it starts and ends, but the curve tells it
+            /// where to be in that range at any given time.
             parent: controller,
             curve: const Interval(
-              /// Our interval tells Flutter when in the total duration of the
-              /// overall animation you want to start and end this section
-              /// (opacity) at.
+              /// Our interval tells Flutter when *in the total duration of the
+              /// overall animation* you want to start and end this section.
               ///
               /// The below code will cause the opacity to start animating immediately
-              /// (at 0 AKA 0.0%) and it will complete its transition when the overall animation
-              /// is at 20% (0.2) of completion
+              /// at 0.0% and it will complete our opacity animation when the total
+              /// duration reaches 20%.
+              ///
+              /// What happens with intervals is you can specify that one animation
+              /// (opacity, size, location, color) is going to play during only *part*
+              /// of the overall duration of the entire animation. That's what
+              /// we're doing here, animating various properties at different
+              /// parts of the overall duration, to create a sequence of
+              /// animations.
               0.0,
               0.2,
 
@@ -207,7 +222,7 @@ class StaggeredAnimation extends StatelessWidget {
         ),
         super(key: key);
 
-  /// The build is called each time the controller "ticks" and the
+  /// build() is called each time the controller "ticks" and the
   /// controller's value is updated. When build runs, the controller's
   /// updated value will be used to recalculate each parameter's
   /// new value for the frame being rendered.

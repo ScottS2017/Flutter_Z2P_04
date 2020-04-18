@@ -101,7 +101,6 @@ class PhoneBackground extends StatelessWidget {
           width: 3,
         ),
         borderRadius: BorderRadius.circular(20),
-        // TODO 21) Make a BoxShadow that's black 87, blurRadius of 12 and offset 4. 6
         boxShadow: [
           const BoxShadow(
             color: Colors.black87,
@@ -109,7 +108,6 @@ class PhoneBackground extends StatelessWidget {
             offset: Offset(4, 6),
           ),
         ],
-        // TODO 22) Let's turn this into a cool background for a phone app. Add a SweepGradient with colors: FF0185D0, FFB7459C, FFFF3780  with stops of 0.5, 0.75, and 1
         gradient: const SweepGradient(
           colors: [
             Color(0xFF0185D0),
@@ -121,7 +119,6 @@ class PhoneBackground extends StatelessWidget {
             0.75,
             1,
           ],
-          // TODO 23) Last but not least, make this look really cool by moving the center so the point of origin is centered horizontally and on the bottom edge of the screen. Figure that out yourself... by now, you can do it! Hint: Look at what the center parameter of the SweepGradient takes. If you're in an IDE you can link to the SweepGradient source code.
           center: Alignment(0.0, 1.0),
         ),
       ),

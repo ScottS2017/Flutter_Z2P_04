@@ -5,8 +5,14 @@ import 'package:o4_navigation_and_animation/app/app_colors.dart';
 /// This was only broken out into its own class to make it easier to understand
 /// Normally, you would just have the AnimatedContainer placed in the UI, instead
 /// of creating a custom Widget and calling it in like this.
+///
+/// This particular application of AnimatedContainer is much more
+/// complicated than most uses in an app, because here we're going
+/// over many of its capabilities for demonstration purposes. Normally,
+/// you'd only use one or two of its capabilities
+
 class TheContainerBeingAnimated extends StatelessWidget {
-  /// Create a variable for each property being animated
+  /// Create a variable for each property being animated (here it's a lot)
   final double currentHeight;
   final double currentWidth;
   final double currentVerticalPadding;

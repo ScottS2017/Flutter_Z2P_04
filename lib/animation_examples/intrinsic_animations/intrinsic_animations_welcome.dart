@@ -13,7 +13,6 @@ class _IntrinsicAnimationsWelcomeState extends State<IntrinsicAnimationsWelcome>
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
