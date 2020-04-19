@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/app/app_colors.dart';
 import 'package:o4_navigation_and_animation/app/app_textstyles.dart';
 import 'package:o4_navigation_and_animation/pages/home_teal.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example.dart';
 
 class NavigationAndRoutesPage2 extends StatefulWidget {
   const NavigationAndRoutesPage2({
@@ -71,9 +70,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
                       style: AppTextStyles.bold24.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -91,9 +90,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
                       style: AppTextStyles.normal18.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -138,9 +137,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
                       style: AppTextStyles.bold24.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -155,9 +154,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
                       style: AppTextStyles.normal18.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -196,9 +195,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
                       style: AppTextStyles.bold24.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],
@@ -212,9 +211,9 @@ class _NavigationAndRoutesPage2State extends State<NavigationAndRoutesPage2> {
                       style: AppTextStyles.normal18.copyWith(
                         color: AppColors.darkThemeBlackText60pctOpacity,
                         shadows: [
-                          Shadow(
+                          const Shadow(
                             color: AppColors.dropShadowColor,
-                            offset: const Offset(2, 2),
+                            offset: Offset(2, 2),
                             blurRadius: 2,
                           ),
                         ],

@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="o4_navigation_and_animation"
+        android:label="Z2P Module 4"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
