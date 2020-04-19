@@ -103,14 +103,13 @@ class StaggeredAnimation extends StatelessWidget {
   /// covered here apply to all the other parameters being
   /// animated, as well.
   StaggeredAnimation({Key key, this.controller})
-
       : opacity = Tween<double>(
           /// Begin animating this at 0.0% and end at 100%.
-    /// Things that range from 0 to 1 are usually percentages
-    /// but we can animate between two numbers, as well. The
-    /// begin number will be considered 0% of the duration and
-    /// the end number will be reached when the ticker
-    /// reaches 100% of whatever duration you specify.
+          /// Things that range from 0 to 1 are usually percentages
+          /// but we can animate between two numbers, as well. The
+          /// begin number will be considered 0% of the duration and
+          /// the end number will be reached when the ticker
+          /// reaches 100% of whatever duration you specify.
           begin: 0.0,
           end: 1.0,
         ).animate(
@@ -230,7 +229,10 @@ class StaggeredAnimation extends StatelessWidget {
     return Material(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Staggered Animations'),
+          title: const FittedBox(
+            fit: BoxFit.fitWidth,
+            child: Text('Staggered Animations'),
+          ),
         ),
         body: Container(
           padding: const EdgeInsets.all(8.0),

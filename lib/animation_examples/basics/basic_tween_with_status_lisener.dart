@@ -2,11 +2,9 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class BasicTweenWithStatusListener extends StatefulWidget {
-
   const BasicTweenWithStatusListener({
     Key key,
   }) : super(key: key);
-
 
   @override
   _BasicTweenWithStatusListenerState createState() => _BasicTweenWithStatusListenerState();
@@ -61,7 +59,10 @@ class _BasicTweenWithStatusListenerState extends State<BasicTweenWithStatusListe
     return Material(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Tween with StatusListener'),
+          title: const FittedBox(
+            fit: BoxFit.fitWidth,
+            child: Text('Tween with StatusListener'),
+          ),
         ),
         body: Center(
           child: Container(
