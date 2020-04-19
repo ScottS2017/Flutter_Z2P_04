@@ -18,7 +18,7 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
   AnimationController _controller;
   int _currentCurve = 0;
   Curve _useThisCurve = Curves.ease;
-  String _curveType = 'Examples of Curves';
+  String _curveType = 'Ease';
 
   @override
   void initState() {
@@ -51,11 +51,11 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
   }
 
   final List<String> _curveTitles = [
-    'Curves.ease',
-    'Curves.bounceInOut',
-    'Curves.elasticInOut',
-    'Curves.fastOutSlowIn',
-    'Curves.decelerate',
+    'Ease',
+    'BounceInOut',
+    'ElasticInOut',
+    'FastOutSlowIn',
+    'Decelerate',
   ];
 
   final List<Curve> _curves = [
@@ -128,35 +128,28 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
                       ),
                       Column(
                         children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              const Text(
-                                'Start (Dismissed)',
-                                style: TextStyle(
-                                  fontSize: 36.0,
-                                ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: const Text(
+                              'Start (Dismissed)',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontSize: 18.0,
                               ),
-                              const Spacer(
-                                flex: 1,
-                              ),
-                            ],
+                            ),
                           ),
-                          const Expanded(
+                          const Spacer(
                             flex: 1,
-                            child: SizedBox(),
                           ),
-                          Row(
-                            children: <Widget>[
-                              const Spacer(
-                                flex: 1,
+                          SizedBox(
+                            width: double.infinity,
+                            child: const Text(
+                              'Completed (End)',
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontSize: 18.0,
                               ),
-                              const Text(
-                                'Completed (End)',
-                                style: TextStyle(
-                                  fontSize: 36.0,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       ),

@@ -23,7 +23,6 @@ class _BasicAnimationsHomeState extends State<BasicAnimationsHome> {
     const BasicTweenWithStatusListener(),
     const ExamplesOfCurves(),
     const PhysicsAnimation(),
-    // const SimultaneousAnimations(),
     const StaggerDemo(),
   ];
 

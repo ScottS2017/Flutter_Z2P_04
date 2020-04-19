@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:o4_navigation_and_animation/pages/home_orange.dart';
 import 'package:o4_navigation_and_animation/pages/home_teal.dart';
 import 'package:o4_navigation_and_animation/pages/welcome.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example.dart';
-import 'package:o4_navigation_and_animation/widgets/examples/navigation_and_routes_example2.dart';
 
 void main() => runApp(NavigationRoutesAndAnimation());
 
@@ -12,6 +10,7 @@ class NavigationRoutesAndAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Z2P Widgets You Can See',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

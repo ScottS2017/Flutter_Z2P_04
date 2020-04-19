@@ -47,6 +47,7 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -63,12 +64,11 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
               child: Container(
                 height: double.infinity,
                 width: double.infinity,
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(16),
                 color: Colors.white,
                 alignment: Alignment.topLeft,
                 child: Container(
-                  height: MediaQuery.of(context).size.height - 16 - MediaQuery.of(context).padding.top,
-                  width: MediaQuery.of(context).size.width - 16,
+                  height: double.infinity,
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: const Color(0xFFDDDDDD),
@@ -87,32 +87,27 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                         semanticsLabel: 'Navigation and Animation',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 28,
                           color: Colors.black,
                         ),
                       ),
-                      const Expanded(
-                        flex: 80,
-                        child: Text(
-                          "\n      Here, we'll look at getting from page to page, getting back, and we'll have a look at Flutter's animation capabilities.\n\n     Flutter not only makes it easy to do custom animaitons, it has pre-built solutions for the most common animation problems you might run into. ",
-                          semanticsLabel: "Here, we'll look at getting from page to page, getting back, and we'll have a look at Flutter's animation capabilities. Flutter not only makes it easy to do custom animaitons, it has pre-built solutions for the most common animation problems you might run into. ",
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.black,
-                          ),
+                      const  Text(
+                        "\n      Here, we'll look at getting from page to page, getting back, and we'll have a look at Flutter's animation capabilities.\n\n     Flutter not only makes it easy to do custom animaitons, it has pre-built solutions for the most common animation problems you might run into. ",
+                        semanticsLabel: "Here, we'll look at getting from page to page, getting back, and we'll have a look at Flutter's animation capabilities. Flutter not only makes it easy to do custom animaitons, it has pre-built solutions for the most common animation problems you might run into. ",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
                         ),
                       ),
-                      const SizedBox(
-                        height: 100,
-                        child: Text(
-                          '\nPress And Hold\nAnywhere to Continue\n',
-                          semanticsLabel: 'Press And Hold Anywhere to Continue',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.black,
-                          ),
+                      const Spacer(),
+                      const Text(
+                        '\nPress And Hold\nAnywhere to Continue\n',
+                        semanticsLabel: 'Press And Hold Anywhere to Continue',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
                         ),
                       ),
                     ],
