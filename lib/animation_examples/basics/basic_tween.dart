@@ -46,7 +46,7 @@ class _BasicTweenState extends State<BasicTween> with SingleTickerProviderStateM
     animation = Tween(begin: 0.0, end: 400.0).animate(controller)
       ..addListener(() {
         setState(() {
-          // the state that has changed here is the animation object’s value
+          /// the state that has changed here is the animation object’s value
         });
       });
     controller.forward();
