@@ -12,9 +12,9 @@ class ExamplesOfCurves extends StatefulWidget {
   ExamplesOfCurvesState createState() => ExamplesOfCurvesState();
 }
 
-// Take a look at TickerProviderStateMixin as opposed to SingleTickerProviderStateMixin
+/// Take a look at TickerProviderStateMixin as opposed to SingleTickerProviderStateMixin
 class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderStateMixin {
-  //
+  ///
   AnimationController _controller;
   int _currentCurve = 0;
   Curve _useThisCurve = Curves.ease;
@@ -24,11 +24,11 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
   void initState() {
     super.initState();
 
-    // Duration is the total duration of all transitions, expressed in time.
+    /// Duration is the total duration of all transitions, expressed in time.
     _controller = AnimationController(
       duration: const Duration(milliseconds: 3000),
 
-      // Vsync is a must, it ensures that each frame that is processed corresponds to a frame that is actually rendered on the screen.
+      /// Vsync is a must, it ensures that each frame that is processed corresponds to a frame that is actually rendered on the screen.
       vsync: this,
     );
   }
@@ -122,6 +122,9 @@ class ExamplesOfCurvesState extends State<ExamplesOfCurves> with TickerProviderS
                   ),
                   child: Stack(
                     children: <Widget>[
+
+                      /// This is our custom AnimatedBox Widget,
+                      /// located below on this page
                       AnimatedBox(
                         currentCurve: _useThisCurve,
                         controller: _controller,
@@ -177,11 +180,17 @@ class AnimatedBox extends StatelessWidget {
 
   AnimatedBox({Key key, this.controller, this.currentCurve})
       : movement = AlignmentTween(
+
+    /// Animate from top left to bottom right
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ).animate(
           CurvedAnimation(
             parent: controller,
+            /// Use an Interval to animate from the starting position to the
+            /// ending position (if going forward), using whatever curve
+            /// is in the current curve variable. Reverse start and end
+            /// when going backward but use the same curve.
             curve: Interval(
               movementStart,
               movementEnd,

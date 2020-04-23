@@ -141,6 +141,9 @@ class StaggeredAnimation extends StatelessWidget {
             ),
           ),
         ),
+
+  ///
+  /// And here are all the rest of the parameters we'll be animating
         rotate = Tween<double>(
           begin: 0.0,
           end: 3.141 * 4,
@@ -221,10 +224,10 @@ class StaggeredAnimation extends StatelessWidget {
         ),
         super(key: key);
 
-  /// build() is called each time the controller "ticks" and the
-  /// controller's value is updated. When build runs, the controller's
-  /// updated value will be used to recalculate each parameter's
-  /// new value for the frame being rendered.
+  /// build() is called each time the controller "ticks", meaning the
+  /// controller's value is updated. When build() runs, the controller's
+  /// updated value will be used to recalculate the new values for
+  /// for each of these Widgets when the new frame is rendered.
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Material(
       child: Scaffold(
